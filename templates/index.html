@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="/static/index.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="weather-card">
+
+            <h1 class="app-title">🌤 Weather App</h1>
+            <p class="author">By Guddu</p>
+
+            <div class="search-box">
+                <h2>Search</h2>
+
+                <form action="/" method="post">
+                    <input 
+                        type="text" 
+                        name="location" 
+                        placeholder="Enter city name"
+                        required
+                    >
+
+                    <button type="submit">
+                        Search
+                    </button>
+                </form>
+            </div>
+
+            {% if weather_data != None %}
+
+            <div class="location-box">
+                <h2>Location</h2>
+
+                <p>
+                    <strong>City:</strong>
+                    {{ location }}
+                </p>
+
+                <p>
+                    <strong>Latitude:</strong>
+                    {{ weather_data.latitude }}
+                </p>
+
+                <p>
+                    <strong>Longitude:</strong>
+                    {{ weather_data.longitude }}
+                </p>
+            </div>
+
+            <div class="current-weather">
+                <h2>Current Weather</h2>
+
+                <div class="weather-info">
+
+                    <div class="info-card">
+                        <span class="label">🕒 Time</span>
+
+                        <span class="value">
+                            {{ weather_data.current.time }}
+                        </span>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="label">🌡 Temperature</span>
+
+                        <span class="value">
+                            {{ weather_data.current.temperature_2m }} °C
+                        </span>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="label">💨 Wind Speed</span>
+
+                        <span class="value">
+                            {{ weather_data.current.wind_speed_10m }} km/h
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

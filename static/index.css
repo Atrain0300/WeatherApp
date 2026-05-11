@@ -1,0 +1,178 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+}
+
+.weather-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.app-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.author {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   Search Box
+========================= */
+
+.search-box {
+    margin-bottom: 30px;
+}
+
+.search-box h2 {
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #4facfe;
+    padding-bottom: 5px;
+}
+
+.search-box form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #dbeafe;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 8px rgba(79, 172, 254, 0.3);
+}
+
+.search-box button {
+    padding: 12px 18px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #2196f3;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   Weather Sections
+========================= */
+
+.location-box,
+.current-weather {
+    margin-bottom: 25px;
+}
+
+.location-box h2,
+.current-weather h2 {
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #4facfe;
+    padding-bottom: 5px;
+}
+
+.location-box p {
+    margin-bottom: 10px;
+    color: #444;
+    font-size: 1rem;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-card {
+    background: #f4f9ff;
+    padding: 15px 18px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    border-left: 5px solid #4facfe;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    background: #e8f4ff;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+.value {
+    color: #0077cc;
+    font-weight: 600;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 500px) {
+
+    .weather-card {
+        padding: 20px;
+    }
+
+    .app-title {
+        font-size: 1.6rem;
+    }
+
+    .search-box form {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .info-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
